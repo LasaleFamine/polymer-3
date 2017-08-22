@@ -1,0 +1,16 @@
+{
+  "name": "polymer-3",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {
+    "@polymer/polymer": "next"
+  },
+  "devDependencies": {
+    "text-loader": "^0.0.1",
+    "webpack": "^3.5.5"
+  }
+}
