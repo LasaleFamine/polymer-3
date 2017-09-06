@@ -1,4 +1,6 @@
 import {Element} from '@polymer/polymer/polymer-element.js';
+import 'polymer-twitter-timeline';
+
 import template from './template.html';
 
 export class AwesomeComponent extends Element {
