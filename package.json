@@ -4,13 +4,23 @@
   "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack"
+    "start": "http-server dist",
+    "build": "yarn clean:dist && webpack && yarn copystatic:dist",
+    "dev": "webpack-dev-server --hot --inline",
+    "copystatic": "cp -R node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js src/vendor",
+    "copystatic:dist": "cp -R src/vendor dist/vendor && cp src/index.html dist",
+    "clean:dist": "rm -rf dist",
+    "postinstall": "yarn copystatic"
   },
   "dependencies": {
-    "@polymer/polymer": "next"
+    "@polymer/polymer": "LasaleFamine/polymer#3.0-preview",
+    "http-server": "0.10.0",
+    "polymer-twitter-timeline": "1.0.1"
   },
   "devDependencies": {
-    "text-loader": "^0.0.1",
-    "webpack": "^3.5.5"
+    "postcss-html-loader": "1.0.0",
+    "text-loader": "0.0.1",
+    "webpack": "3.5.5",
+    "webpack-dev-server": "2.7.1"
   }
 }
